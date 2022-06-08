@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="spacer blog">
+    <div class="row">
+      <div class="col-lg-2 visible-lg"></div>
+      <div class="col-lg-8">
+
+        <!-- blog detail -->
+        <h2>{{item?.title}}</h2>
+        <div class="info">{{item?.address}}</div>
+        <ngb-carousel>
+
+          <ng-template ngbSlide *ngFor="let image of item?.images">
+
+            <div class="wrapper">
+
+              <img [src]="image" alt="Trang trình bày đầu tiên ngẫu nhiên">
+
+            </div>
+            <div class="carousel-caption">
+            </div>
+
+          </ng-template>
+        </ngb-carousel>
+        <div class="center">
+          <h4>Diện tích : {{item?.area}}, Giá : {{item?.price.from | currency: "VND" : true : '1.3-3'}}.000.000 -
+            {{item?.price.to | currency: "VND" : true : '1.3-3'}}.000.000</h4>
+        </div>
+        <p>{{item?.description}}</p>
+
+
+      </div>
+      <div class="col-lg-2 visible-lg"></div>
+
+
+
+
+      </div>
+    </div>
+  </div>
