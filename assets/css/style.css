@@ -39,7 +39,7 @@
 
   .thumbnail{ background-color:#fff;}
 
-  .header {padding: 20px 0;}
+  .header {padding: 20px 0 0 0;}
   .header ul{list-style: none;margin: 0; padding: 0;margin-top: 25px;}
   .header ul li{ display: inline-block; padding: 0 0 0 40px;}
   .header ul li a{ font-size: 19px;font-family: din;text-transform: uppercase;text-decoration: none;}
