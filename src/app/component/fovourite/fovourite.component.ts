@@ -1,4 +1,6 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { RealEstateService } from 'src/app/service/real-estate.service';
 
 @Component({
@@ -15,8 +17,9 @@ export class FovouriteComponent implements OnInit {
   }
 
   Remove(id:any){
-    this.listFavorite = this.listFavorite.filter((item:any) => item.id !== id)
+  this.listFavorite = this.listFavorite.filter((item:any) => item.id !== id)
   this.realEstateService.set(this.listFavorite);
+  this.realEstateService.showSuccess('Xóa khỏi danh sách yêu thích thành công', 'Thông báo');
   }
 
 }

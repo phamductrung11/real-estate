@@ -1,27 +1,29 @@
-<div class="container mt-2 mb-2">
+<div class="container mt-2 mb-2" style="height: 500px; overflow-Y:scroll">
   <table class="table table-wishlist table-mobile">
     <thead>
-      <tr>
-        <th class="w-25">Hình ảnh</th>
-        <th class="w-25">Tên</th>
-        <th class="w-25">Giá</th>
-        <th class="w-25">Hành động</th>
+      <tr class="headerTable ">
+        <th class="w-5 text-center">STT</th>
+        <th class="w-25 text-center">Hình ảnh</th>
+        <th class="w-25 text-center">Tên</th>
+        <th class="w-25 text-center">Giá</th>
+        <th class="w-20 text-center">Hành động</th>
       </tr>
     </thead>
     <tbody>
       <ng-container *ngIf="listFavorite?.length > 0 ; else notFound">
-      <tr *ngFor="let item of listFavorite">
-        <td class="product-col">
-          <div class="product">
+      <tr *ngFor="let item of listFavorite;let i=index">
+        <td class="product-col text-center">{{i+1}}</td>
+        <td class="product-col text-center">
+          <div class="product text-center">
             <figure class="product-media"><a href="#"><img
                   [src]="item.avatar" style="height: 100px;width:75%"></a></figure>
           </div>
         </td>
-        <td> <h4 class="product-title">{{item.title}}</h4></td>
-        <td class="price-col">
+        <td class="text-center"> <h4 class="product-title">{{item.title}}</h4></td>
+        <td class="price-col text-center">
           <h4>{{item.price.from | currency: "VND" : true : '1.3-3'}}.000.000 - {{item.price.to | currency: "VND" : true : '1.3-3'}}.000.000</h4>
         </td>
-        <td class="remove-col text-center"><button class="btn btn-secondary btn-sm" (click)="Remove(item.id)"><i class="icon-close"></i> X </button></td>
+        <td class="remove-col text-center"><button class="btn btn-danger " (click)="Remove(item.id)"><i class="icon-close"></i> X </button></td>
       </tr>
       </ng-container>
       <ng-template #notFound>

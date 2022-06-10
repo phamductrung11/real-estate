@@ -115,6 +115,7 @@ export class ListRealEstateComponent implements OnInit {
     let ListItem = this.realEstateService.get();
     ListItem.push(event)
     this.realEstateService.set(ListItem)
+    this.realEstateService.showSuccess('Thêm vào danh sách yêu thích thành công', 'Thông báo')
     this.listReadEstate.map((item:any) => {
       if (item.id === event.id) {
         item.disabled = true;

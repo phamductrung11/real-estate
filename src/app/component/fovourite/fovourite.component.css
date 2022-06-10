@@ -1,0 +1,9 @@
+tr th {
+	background: #428bca;
+	color: #fff !important;
+	text-transform: capitalize;
+	border-right: 1px solid #ded2d2;
+}
+tr td {
+  border: 1px solid #CDCDCD;
+}

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { RealEstateService } from 'src/app/service/real-estate.service';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,7 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
   currentUrl:any;
   nameUrl:any;
-  constructor(public router:Router) {
+  constructor(public router:Router, public realEstateService: RealEstateService) {
   }
 
   ngOnInit(): void {
@@ -27,6 +28,15 @@ export class HeaderComponent implements OnInit {
         }
       }
     );
+  }
+
+  hanldeCart(){
+    const listRealEstate =this.realEstateService.get();
+    if (listRealEstate.length === 0) {
+      this.realEstateService.showError('Không có bảng ghi nào trong danh sách', 'Thông báo');
+    }else{
+      this.router.navigate(['/favourite'])
+    }
   }
 
 }

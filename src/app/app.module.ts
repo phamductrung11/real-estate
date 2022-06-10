@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FovouriteComponent } from './component/fovourite/fovourite.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ItemReadEstateComponent,
     DetailReadEstateComponent,
     FooterComponent,
-    FovouriteComponent
+    FovouriteComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +33,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbPaginationModule
+    NgbPaginationModule,
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+    }),
   ],
   providers: [RealEstateService],
   bootstrap: [AppComponent]
