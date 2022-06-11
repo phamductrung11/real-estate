@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DetailReadEstateComponent } from './component/detail-read-estate/detail-read-estate.component';
 import { FovouriteComponent } from './component/fovourite/fovourite.component';
 import { ListRealEstateComponent } from './component/list-real-estate/list-real-estate.component';
+import { GuaraRealEstateGuard } from './service/guara-real-estate.guard';
 
 const routes: Routes = [
   {
@@ -19,7 +20,9 @@ const routes: Routes = [
       },
       {
         path: 'detail/:id',
-        component: DetailReadEstateComponent
+        component: DetailReadEstateComponent,
+        canActivate: [GuaraRealEstateGuard]
+
       }
     ]
   },

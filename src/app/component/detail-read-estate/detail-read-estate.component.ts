@@ -20,7 +20,6 @@ export class DetailReadEstateComponent implements OnInit {
     let id = this.activeRoute.snapshot.paramMap.get('id');
     this.realEstateService.getData().subscribe((res) => {
        this.item = res.find((item:any)=> item.id == id);
-       console.log(this.item);
     });
   }
 
